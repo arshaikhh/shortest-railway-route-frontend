@@ -1,0 +1,36 @@
+.alignContent {
+ 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.homePageText {
+ 
+  background-color:rgb(221, 219, 219);
+   width:40%;
+    margin-left:auto;
+     margin-right:auto;
+}
+
+
+.backgroundImage {
+    
+    background-image: url(/images/rail.gif);
+    min-height:100vh;
+  background-attachment: fixed;
+  background-position: center;
+  height:100%;
+  width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+    
+
+
+
+  
