@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { baseURL } from "./utils/baseURL";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import AllStations from "./components/AllStations";
 
 function App(): JSX.Element {
   const [tracksList, setTracksList] = useState<string[]>([""]);
@@ -24,6 +25,10 @@ function App(): JSX.Element {
           <Route
             path="/shortestroute"
             element={<ShortestRoute tracksList={tracksList} />}
+          />
+          <Route
+            path="/allstations"
+            element={<AllStations tracksList={tracksList} />}
           />
         </Routes>
       </BrowserRouter>

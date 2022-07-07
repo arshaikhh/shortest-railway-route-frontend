@@ -15,9 +15,11 @@ function Home(): JSX.Element {
         <Title level={2} className="homePageText">
           What would you like to do
         </Title>
-        <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
-          View All Stations
-        </Button>{" "}
+        <Link to="/allstations">
+          <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
+            View All Stations
+          </Button>
+        </Link>{" "}
         <Link to="/shortestroute">
           <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
             Find Shortest Route
