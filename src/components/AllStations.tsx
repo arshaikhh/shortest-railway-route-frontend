@@ -13,8 +13,6 @@ function AllStations(props: Props): JSX.Element {
 
   useEffect(() => setFilteredData(props.tracksList), [props.tracksList]);
 
-  console.log(props.tracksList);
-  console.log(filteredData);
   function filterData(filter: string) {
     setFilteredData(
       props.tracksList.filter(
@@ -26,7 +24,9 @@ function AllStations(props: Props): JSX.Element {
 
   return (
     <div className="alignContent">
-      <Title level={2}>View All Stations</Title>
+      <Title level={2} style={{ marginTop: "10px" }}>
+        View All Stations
+      </Title>
       <div>
         <Input
           style={{ marginLeft: "auto", marginRight: "auto", width: "35%" }}

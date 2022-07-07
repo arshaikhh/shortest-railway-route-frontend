@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { baseURL } from "./utils/baseURL";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import AllStations from "./components/AllStations";
+import PageHeader from "./components/Header";
 
 function App(): JSX.Element {
   const [tracksList, setTracksList] = useState<string[]>([""]);
@@ -21,14 +22,32 @@ function App(): JSX.Element {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <PageHeader headerKeys="0" />
+                <Home />
+              </>
+            }
+          />
           <Route
             path="/shortestroute"
-            element={<ShortestRoute tracksList={tracksList} />}
+            element={
+              <>
+                <PageHeader headerKeys="2" />
+                <ShortestRoute tracksList={tracksList} />
+              </>
+            }
           />
           <Route
             path="/allstations"
-            element={<AllStations tracksList={tracksList} />}
+            element={
+              <>
+                <PageHeader headerKeys="1" />
+                <AllStations tracksList={tracksList} />
+              </>
+            }
           />
         </Routes>
       </BrowserRouter>

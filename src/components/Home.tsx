@@ -8,7 +8,7 @@ const Title = Typography.Title;
 function Home(): JSX.Element {
   return (
     <div className="alignContent backgroundImage">
-      <Title style={{ backgroundColor: "white" }}>
+      <Title style={{ backgroundColor: "white", marginTop: "10px" }}>
         Welcome To Railway Route Finder
       </Title>
       <div style={{ marginTop: "15%" }}>
