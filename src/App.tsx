@@ -16,7 +16,11 @@ function App(): JSX.Element {
       const res = await axios.get(baseURL + "allstations");
       setTracksList(res.data);
     };
-    fetchTracksData();
+    try {
+      fetchTracksData();
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
   return (
     <>

@@ -17,13 +17,16 @@ function ShortestRoute(props: Props): JSX.Element {
     useState<ShortestComputedRoute | null>();
 
   async function fetchShortestRoute() {
-    const res = await axios.get(
-      baseURL + `shortestroute/${departureTrack}/${destinationTrack}`
-    );
-    setShortestRouteData(res.data);
-    setIsVisible(true);
+    try {
+      const res = await axios.get(
+        baseURL + `shortestroute/${departureTrack}/${destinationTrack}`
+      );
+      setShortestRouteData(res.data);
+      setIsVisible(true);
+    } catch (error) {
+      console.error(error);
+    }
   }
-  console.log(shortestRouteData);
   return (
     <div className="alignContent">
       <Title level={2}>Find Shortest Route</Title>
