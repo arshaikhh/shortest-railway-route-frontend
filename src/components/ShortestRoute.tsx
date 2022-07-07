@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { baseURL } from "../utils/baseURL";
 import ShortestComputedRoute from "../utils/interfaces";
-
+import DisplayShortestRouteData from "./DisplayShortestRouteData";
 interface Props {
   tracksList: string[];
 }
@@ -73,48 +73,12 @@ function ShortestRoute(props: Props): JSX.Element {
       </Button>
       <br />
       <hr />
-      {shortestRouteData?.path === null && isVisible ? (
-        <Title level={4} type="danger">
-          Sorry! No Route found from {departureTrack} to {destinationTrack}. The
-          departure and destination location might be the same or the route
-          doesn't exist. Please try another route.
-        </Title>
-      ) : shortestRouteData !== undefined && isVisible ? (
-        <>
-          <Title level={4}>
-            Your shortest Route from {departureTrack} to {destinationTrack} is
-            as follows
-          </Title>
-          <br />
-          <Title level={5} underline={true}>
-            Shortest Distance
-          </Title>
-          <Title level={5}>
-            {shortestRouteData?.cost && shortestRouteData?.cost / 1000}
-          </Title>
-          <Title level={5} underline={true}>
-            Number of Tracks{" "}
-          </Title>
-          <Title level={5}>{shortestRouteData?.trackLength}</Title>
-          <Title level={5} underline={true}>
-            Shortest Track Path
-          </Title>
-        </>
-      ) : (
-        <br />
-      )}
-
-      {shortestRouteData?.path === null && isVisible ? (
-        <br />
-      ) : (
-        isVisible &&
-        shortestRouteData?.path.map((path, idx) => (
-          <div key={idx} className="routesContainer">
-            {idx !== 0 && <span style={{ fontSize: "30px" }}>→</span>}
-            <div className="routes">{path}</div>
-          </div>
-        ))
-      )}
+      <DisplayShortestRouteData
+        shortestRouteData={shortestRouteData}
+        isVisible={isVisible}
+        departureTrack={departureTrack}
+        destinationTrack={destinationTrack}
+      />
     </div>
   );
 }
