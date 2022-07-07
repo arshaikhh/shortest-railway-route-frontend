@@ -30,7 +30,20 @@
     background-position: center;
 }
     
+.routesContainer {
+  display: inline-flex;
+}
 
-
-
+.routes {
+  
+ 
+  font-size: 15px;
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 10px;
+  
+  padding: 5px;
+  background-color: #d8f2ef;
+  
+}
   

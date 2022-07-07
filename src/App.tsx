@@ -4,6 +4,7 @@ import ShortestRoute from "./components/ShortestRoute";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { baseURL } from "./utils/baseURL";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App(): JSX.Element {
   const [tracksList, setTracksList] = useState<string[]>([""]);
@@ -17,8 +18,15 @@ function App(): JSX.Element {
   }, []);
   return (
     <>
-      <Home />
-      <ShortestRoute tracksList={tracksList} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/shortestroute"
+            element={<ShortestRoute tracksList={tracksList} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

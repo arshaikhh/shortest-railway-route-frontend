@@ -1,8 +1,7 @@
 import { Typography } from "antd";
 import { Button } from "antd";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { baseURL } from "../utils/baseURL";
+
+import { Link } from "react-router-dom";
 
 const Title = Typography.Title;
 
@@ -19,9 +18,11 @@ function Home(): JSX.Element {
         <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
           View All Stations
         </Button>{" "}
-        <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
-          Find Shortest Route
-        </Button>
+        <Link to="/shortestroute">
+          <Button size="large" type="primary" style={{ borderRadius: "6px" }}>
+            Find Shortest Route
+          </Button>
+        </Link>
       </div>
     </div>
   );
