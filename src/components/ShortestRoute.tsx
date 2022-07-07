@@ -17,9 +17,6 @@ function ShortestRoute(props: Props): JSX.Element {
     useState<ShortestComputedRoute | null>();
 
   async function fetchShortestRoute() {
-    console.log(
-      baseURL + `shortestroute/${departureTrack}/${destinationTrack}`
-    );
     const res = await axios.get(
       baseURL + `shortestroute/${departureTrack}/${destinationTrack}`
     );
